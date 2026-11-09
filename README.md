@@ -1,24 +1,24 @@
 # Active Directory Attack Chain: Simulation & DFIR Investigation
 
-**A self-contained red team / blue team project: compromise a small Active Directory environment using a realistic attack chain, then investigate it like a real incident responder — using three independent evidence sources.**
+**A self-contained red team / blue team project: compromise a small Active Directory environment using a realistic attack chain, then investigate it like a real incident responder - using three independent evidence sources.**
 
 ---
 
 ## Introduction
 
-Most beginner security projects stop at "I set up a SIEM and wrote some detection rules." This project goes a step further: it simulates a complete, realistic Active Directory compromise — reconnaissance, Kerberoasting, credential theft, and lateral movement to Domain Admin — and then investigates that compromise the way a real incident response team would, using **three independent evidence sources** rather than relying on logs alone:
+This project simulates a complete, realistic Active Directory compromise - reconnaissance, Kerberoasting, credential theft, and lateral movement to Domain Admin - and then investigates that compromise the way a real incident response team would, using **three independent evidence sources** rather than relying on logs alone:
 
-- **Splunk** (SIEM) — what the logs show
-- **Velociraptor** (live endpoint forensics) — what the system's current state shows
-- **Volatility 3** (memory forensics) — what was sitting in RAM at the moment of capture
+- **Splunk** (SIEM) : what the logs show
+- **Velociraptor** (live endpoint forensics) : what the system's current state shows
+- **Volatility 3** (memory forensics) : what was sitting in RAM at the moment of capture
 
-The goal wasn't just to detect an attack, but to **prove** it happened, reconstruct an accurate timeline, and make real containment and recovery decisions — the same workflow used in professional SOC and DFIR engagements.
+The goal wasn't just to detect an attack, but to **prove** it happened, reconstruct an accurate timeline, and make real containment and recovery decisions.
 
 Everything in this repository was performed inside an isolated, host-only virtual lab against systems I built and own. No real networks, systems, or data were involved.
 
 ## Why I Built This
 
-I wanted a project that went beyond SIEM alert triage (which I already had experience with) and into actual digital forensics and incident response — host-level investigation, memory analysis, and evidence correlation across multiple independent sources. This project was also an exercise in intellectual honesty: where the evidence had gaps or limitations (and there were several — documented throughout), I note them explicitly rather than glossing over them, because that's what real forensic work actually looks like.
+I wanted a project that went beyond SIEM alert triage (which I already had experience with) and into actual digital forensics and incident response - host-level investigation, memory analysis, and evidence correlation across multiple independent sources.
 
 ## Attack Chain Summary
 
@@ -47,17 +47,6 @@ I wanted a project that went beyond SIEM alert triage (which I already had exper
 
 The full report contains the lab architecture, detailed methodology for every phase, the complete timeline cross-referencing all three evidence sources, MITRE ATT&CK mapping, containment and recovery actions, hardening recommendations, and an evidence/chain-of-custody log.
 
-## Repository Structure
-
-```
-├── README.md              ← you are here
-├── REPORT.md               ← full DFIR report
-├── evidence/
-│   ├── splunk/              Splunk search exports and dashboard screenshot
-│   ├── velociraptor/        Live response collection results
-│   └── volatility/          Memory forensics plugin output
-└── screenshots/            Key visuals (attack graph, dashboard, timeline diagram)
-```
 
 ## Tools Used
 
@@ -71,10 +60,5 @@ The full report contains the lab architecture, detailed methodology for every ph
 
 Active Directory & Kerberos internals · Attack path analysis · Credential theft techniques · SIEM detection engineering (SPL) · Live endpoint forensics · Memory forensics · MITRE ATT&CK mapping · Incident timeline reconstruction · Containment & recovery decision-making · Chain of custody / evidence handling · Technical report writing
 
-## Disclaimer
 
-This project was performed entirely within an isolated, host-only virtual lab against systems I built and own. All tools (Mimikatz, Impacket, Hashcat, BloodHound) were used strictly against my own lab environment for educational purposes. No actual Mimikatz binaries or other offensive tooling are included in this repository — only documentation, logs, and evidence of their output.
 
-## Contact
-
-[Your name] · [LinkedIn] · [Email]
