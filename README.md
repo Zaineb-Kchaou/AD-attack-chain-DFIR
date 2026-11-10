@@ -43,7 +43,7 @@ I wanted a project that went beyond SIEM alert triage (which I already had exper
 
 ## Full Report
 
-**[Read the complete report here → REPORT.md](./REPORT.md)**
+**[Read the complete report here → REPORT.pdf](./Report.pdf)**
 
 The full report contains the lab architecture, detailed methodology for every phase, the complete timeline cross-referencing all three evidence sources, MITRE ATT&CK mapping, containment and recovery actions, hardening recommendations, and an evidence/chain-of-custody log.
 
